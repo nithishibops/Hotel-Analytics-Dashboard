@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hotel Analytics Dashboard | Power BI Portfolio</title>
+<meta name="description" content="Interactive 4-page Hotel Analytics dashboard recreated for web publishing from a Power BI project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="1">
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="hotel-brand">
+      <img src="assets/images/hotel-logo.png" alt="Hotel Analytics">
+    </div>
+    <button class="nav-item active" data-page="1">
+      <img src="assets/images/page1-icon.png" alt="">
+      <span>Page 1 – Executive Overview</span>
+    </button>
+    <button class="nav-item" data-page="2">
+      <img src="assets/images/page2-icon.png" alt="">
+      <span>Page 2 – Booking Analytics</span>
+    </button>
+    <button class="nav-item" data-page="3">
+      <img src="assets/images/page3-icon.png" alt="">
+      <span>Page 3 – Revenue & Operations</span>
+    </button>
+    <button class="nav-item" data-page="4">
+      <img src="assets/images/page4-icon.png" alt="">
+      <span>Page 4 – Guest Experience</span>
+    </button>
+  </aside>
+
+  <main class="dashboard">
+    <header class="dashboard-head">
+      <div>
+        <h1>HOTEL ANALYTICS DASHBOARD</h1>
+        <p id="page-title">1. EXECUTIVE OVERVIEW</p>
+      </div>
+      <div class="date-area">
+        <div class="calendar-box">▣</div>
+        <div class="date-chip">04-08-2022</div>
+        <div class="date-chip">29-12-2025</div>
+      </div>
+    </header>
+
+    
+<div class="web-filter-bar" id="web-filter-bar">
+  <div class="filter-group">
+    <button class="filter-pill active" data-filter="all">All</button>
+    <button class="filter-pill" data-filter="high">High</button>
+    <button class="filter-pill" data-filter="medium">Medium</button>
+    <button class="filter-pill" data-filter="low">Low</button>
+  </div>
+  <div class="filter-status" id="filter-status">Interactive mode • All data</div>
+  <button class="reset-dashboard" id="reset-dashboard">Reset</button>
+</div>
+
+    <section class="page active" id="page-1">
+      <div class="kpi-grid six">
+        <article class="kpi"><img src="assets/images/booking-icon.png"><div><span>Total Bookings</span><strong>20K</strong><small class="up">▲ 46.03% VS PY</small></div></article>
+        <article class="kpi"><img src="assets/images/occupancy-icon.png"><div><span>Occupancy Rate</span><strong>60%</strong><small class="up">▲ 45.99% VS PY</small></div></article>
+        <article class="kpi"><img src="assets/images/revenue-icon.png"><div><span>Total Revenue</span><strong>$17M</strong><small class="up">▲ 46.35% VS PY</small></div></article>
+        <article class="kpi"><img src="assets/images/cancel-icon.png"><div><span>Cancellation Rate</span><strong>8.41%</strong><small class="down-good">▼ 45.10% VS PY</small></div></article>
+        <article class="kpi"><img src="assets/images/guests-icon.png"><div><span>Total Guests</span><strong>56,683</strong><small class="up">▲ 45.83% VS PY</small></div></article>
+        <article class="kpi"><img src="assets/images/netrevenue-icon.png"><div><span>Net Revenue</span><strong>$17M</strong><small class="up">▲ 46.40% VS PY</small></div></article>
+      </div>
+
+      <div class="grid two-main">
+        <article class="panel">
+          <h2>Revenue Trend (Monthly)</h2>
+          <svg class="chart" viewBox="0 0 720 255" preserveAspectRatio="none">
+            <defs><linearGradient id="goldArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e4be00" stop-opacity=".48"/><stop offset="1" stop-color="#e4be00" stop-opacity=".05"/></linearGradient></defs>
+            <path class="gridline" d="M52 35H690M52 95H690M52 155H690M52 215H690"/>
+            <path d="M65 67 L120 175 L175 147 L230 119 L285 61 L340 61 L395 30 L450 98 L505 192 L560 185 L615 146 L680 45 L680 215 L65 215Z" fill="url(#goldArea)"/>
+            <polyline points="65,67 120,175 175,147 230,119 285,61 340,61 395,30 450,98 505,192 560,185 615,146 680,45" fill="none" stroke="#e1bd00" stroke-width="4"/>
+            <g class="dots gold">
+              <circle cx="65" cy="67" r="5"/><circle cx="120" cy="175" r="5"/><circle cx="175" cy="147" r="5"/><circle cx="230" cy="119" r="5"/><circle cx="285" cy="61" r="5"/><circle cx="340" cy="61" r="5"/><circle cx="395" cy="30" r="5"/><circle cx="450" cy="98" r="5"/><circle cx="505" cy="192" r="5"/><circle cx="560" cy="185" r="5"/><circle cx="615" cy="146" r="5"/><circle cx="680" cy="45" r="5"/>
+            </g>
+            <g class="axis-labels"><text x="58" y="240">Jan</text><text x="112" y="240">Feb</text><text x="168" y="240">Mar</text><text x="222" y="240">Apr</text><text x="278" y="240">May</text><text x="334" y="240">Jun</text><text x="389" y="240">Jul</text><text x="445" y="240">Aug</text><text x="500" y="240">Sep</text><text x="556" y="240">Oct</text><text x="610" y="240">Nov</text><text x="670" y="240">Dec</text></g>
+          </svg>
+        </article>
+        <article class="panel">
+          <h2>Occupancy Rate Trend</h2>
+          <svg class="chart" viewBox="0 0 640 255" preserveAspectRatio="none">
+            <path class="gridline" d="M52 35H612M52 95H612M52 155H612M52 215H612"/>
+            <path d="M68 140 L115 199 L163 164 L210 143 L257 146 L303 156 L350 154 L398 151 L444 168 L490 157 L538 155 L596 72 L596 215 L68 215Z" fill="rgba(214,180,0,.26)"/>
+            <polyline points="68,140 115,199 163,164 210,143 257,146 303,156 350,154 398,151 444,168 490,157 538,155 596,72" fill="none" stroke="#b99600" stroke-width="4"/>
+            <g class="dots gold"><circle cx="68" cy="140" r="5"/><circle cx="115" cy="199" r="5"/><circle cx="163" cy="164" r="5"/><circle cx="210" cy="143" r="5"/><circle cx="257" cy="146" r="5"/><circle cx="303" cy="156" r="5"/><circle cx="350" cy="154" r="5"/><circle cx="398" cy="151" r="5"/><circle cx="444" cy="168" r="5"/><circle cx="490" cy="157" r="5"/><circle cx="538" cy="155" r="5"/><circle cx="596" cy="72" r="5"/></g>
+            <g class="axis-labels"><text x="60" y="240">Jan</text><text x="107" y="240">Feb</text><text x="156" y="240">Mar</text><text x="202" y="240">Apr</text><text x="249" y="240">May</text><text x="295" y="240">Jun</text><text x="343" y="240">Jul</text><text x="390" y="240">Aug</text><text x="437" y="240">Sep</text><text x="483" y="240">Oct</text><text x="530" y="240">Nov</text><text x="585" y="240">Dec</text></g>
+          </svg>
+        </article>
+      </div>
+
+      <div class="grid bottom-three">
+        <article class="panel"><h2>Top Six Hotels</h2><div class="bar-list gold-bars">
+          <div><span>Azure Crest A...</span><b style="--w:100%">232.72K</b></div><div><span>Solace Resort...</span><b style="--w:99%">231.96K</b></div><div><span>Meridian Cres...</span><b style="--w:93%">215.99K</b></div><div><span>Luxe Horizon ...</span><b style="--w:92%">215.88K</b></div><div><span>Solace Resort...</span><b style="--w:91%">214.07K</b></div><div><span>Meridian Cres...</span><b style="--w:90%">212.55K</b></div>
+        </div></article>
+        <article class="panel"><h2>Booking Channel Distribution</h2><div class="donut-wrap"><div class="donut donut-gold"></div><div class="legend"><span><i class="l1"></i>Website 35.2%</span><span><i class="l2"></i>Mobile App 24.9%</span><span><i class="l3"></i>OTA 20.0%</span><span><i class="l4"></i>Travel Agent 11.9%</span><span><i class="l5"></i>Walk-in 8.0%</span></div></div></article>
+        <article class="panel"><h2>Revenue by City</h2><div class="map-card"><img class="revenue-map-img" src="assets/images/revenue-city-map.jpg" alt="Revenue by City world map"></div></article>
+      </div>
+    </section>
+
+    <section class="page" id="page-2">
+      <div class="kpi-grid four">
+        <article class="kpi blue"><img src="assets/images/booking-icon.png"><div><span>Total Bookings</span><strong>20K</strong><small class="up">▲ 46.03% VS PY</small></div></article>
+        <article class="kpi blue"><div class="icon-text">◎</div><div><span>OTA Booking</span><strong>4.01K</strong><small class="up">▲ 46.17% VS PY</small></div></article>
+        <article class="kpi blue"><div class="icon-text">▣</div><div><span>Website Bookings</span><strong>7.04K</strong><small class="up">▲ 46.76% VS PY</small></div></article>
+        <article class="kpi blue"><div class="icon-text">↻</div><div><span>Repeat Customers</span><strong>1.93K</strong><small class="up">▲ 102.85% VS PY</small></div></article>
+      </div>
+      <div class="grid booking-mid">
+        <article class="panel"><h2>Booking Trend (Monthly)</h2><svg class="chart" viewBox="0 0 760 260" preserveAspectRatio="none">
+          <path class="gridline" d="M52 40H728M52 105H728M52 170H728M52 230H728"/>
+          <path d="M62 55 L120 190 L180 98 L240 72 L300 52 L360 78 L420 102 L480 117 L540 90 L600 115 L660 86 L720 70 L720 230 L62 230Z" fill="rgba(63,151,235,.35)"/>
+          <polyline points="62,55 120,190 180,98 240,72 300,52 360,78 420,102 480,117 540,90 600,115 660,86 720,70" fill="none" stroke="#48a6ff" stroke-width="4"/>
+          <g class="dots"><circle cx="62" cy="55" r="5"/><circle cx="120" cy="190" r="5"/><circle cx="180" cy="98" r="5"/><circle cx="240" cy="72" r="5"/><circle cx="300" cy="52" r="5"/><circle cx="360" cy="78" r="5"/><circle cx="420" cy="102" r="5"/><circle cx="480" cy="117" r="5"/><circle cx="540" cy="90" r="5"/><circle cx="600" cy="115" r="5"/><circle cx="660" cy="86" r="5"/><circle cx="720" cy="70" r="5"/></g>
+          <g class="axis-labels"><text x="55" y="250">Jan</text><text x="112" y="250">Feb</text><text x="173" y="250">Mar</text><text x="232" y="250">Apr</text><text x="292" y="250">May</text><text x="352" y="250">Jun</text><text x="412" y="250">Jul</text><text x="472" y="250">Aug</text><text x="532" y="250">Sep</text><text x="592" y="250">Oct</text><text x="652" y="250">Nov</text><text x="710" y="250">Dec</text></g>
+        </svg></article>
+        <article class="panel"><h2>Seasonal Booking</h2><div class="donut-wrap vertical"><div class="donut donut-blue"></div><div class="legend"><span><i style="background:#2364a3"></i>Winter</span><span><i style="background:#1478cf"></i>Summer</span><span><i style="background:#43a4f5"></i>Spring</span><span><i style="background:#8fc8f2"></i>Autumn</span></div></div></article>
+      </div>
+      <div class="grid booking-bottom">
+        <article class="panel"><h2>Total Bookings by Region</h2><div class="donut-wrap vertical"><div class="donut donut-region"></div><div class="legend compact"><span>Europe 41.88%</span><span>North America 32.45%</span><span>Asia-Pacific 21.69%</span><span>Middle East 3.99%</span></div></div></article>
+        <article class="panel"><h2>Guest By Age Group</h2><div class="column-chart"><b style="--h:90%">21K<span>26-35</span></b><b style="--h:71%">17K<span>36-50</span></b><b style="--h:39%">9K<span>51-65</span></b><b style="--h:29%">7K<span>18-25</span></b><b style="--h:14%">3K<span>65+</span></b></div></article>
+        <article class="panel"><h2>Gender By Guest</h2><div class="h-bars"><div><span>Male</span><b style="--w:100%">9.6K</b></div><div><span>Female</span><b style="--w:100%">9.6K</b></div><div><span>Non-Binary</span><b style="--w:9%">0.8K</b></div></div></article>
+      </div>
+    </section>
+
+    <section class="page" id="page-3">
+      <div class="kpi-grid five">
+        <article class="kpi green"><div class="icon-text">$↗</div><div><span>Total Revenue</span><strong>$17.34M</strong><small class="up">▲ 46.35% VS PY</small></div></article>
+        <article class="kpi green"><div class="icon-text">♨</div><div><span>Food Revenue</span><strong>$3.95M</strong><small class="up">▲ 46.77% VS PY</small></div></article>
+        <article class="kpi green"><div class="icon-text">▰</div><div><span>Room Revenue</span><strong>$12.3M</strong><small class="up">▲ 46.20% VS PY</small></div></article>
+        <article class="kpi green"><div class="icon-text">◉</div><div><span>Spa Revenue</span><strong>$387K</strong><small class="up">▲ 48.34% VS PY</small></div></article>
+        <article class="kpi green"><div class="icon-text">$≡</div><div><span>Average Room Rate</span><strong>$287.13</strong><small>PY: $288.17</small></div></article>
+      </div>
+      <div class="grid revenue-mid">
+        <article class="panel"><h2>Brand Revenue Distribution</h2><div class="donut-wrap"><div class="donut donut-green"></div><div class="legend compact"><span>Azure Crest 655.89K</span><span>Solace Resorts 657.38K</span><span>Meridian Crest 428.54K</span><span>Luxe Horizon 215.88K</span></div></div></article>
+        <article class="panel"><h2>City Revenue Distribution</h2><div class="mini-bars-line"><b style="--h:36%">1.0M</b><b style="--h:42%">1.2M</b><b style="--h:70%">2.4M</b><b style="--h:86%">3.0M</b><b style="--h:35%">1.0M</b><b style="--h:28%">0.8M</b><b style="--h:42%">1.2M</b><b style="--h:28%">0.8M</b><b style="--h:49%">1.5M</b><b style="--h:42%">1.2M</b></div></article>
+        <article class="panel"><h2>Department Revenue Distribution</h2><div class="donut-wrap"><div class="donut donut-dept"></div><div class="legend compact"><span>Food & Beverage</span><span>Front Desk</span><span>Guest Relations</span><span>Housekeeping</span><span>Operations</span></div></div></article>
+      </div>
+      <div class="grid revenue-bottom">
+        <article class="panel heatmap-panel"><h2>Occupancy Heatmap</h2><div class="heatmap" id="heatmap"></div></article>
+        <article class="panel"><h2>Room Rate Trend (Monthly)</h2><svg class="chart" viewBox="0 0 500 250" preserveAspectRatio="none">
+          <path class="gridline" d="M42 60H475M42 145H475M42 215H475"/>
+          <path d="M52 90 L88 119 L125 144 L162 126 L198 85 L235 22 L270 45 L308 93 L344 179 L380 170 L417 113 L462 52 L462 215 L52 215Z" fill="rgba(31,203,101,.25)"/>
+          <polyline points="52,90 88,119 125,144 162,126 198,85 235,22 270,45 308,93 344,179 380,170 417,113 462,52" fill="none" stroke="#28c86f" stroke-width="4"/>
+        </svg></article>
+      </div>
+    </section>
+
+    <section class="page" id="page-4">
+      <div class="kpi-grid five">
+        <article class="kpi purple"><img src="assets/images/rating-icon.png"><div><span>Rating</span><strong>3.80/5</strong><small class="up">▲ 0.07% VS PY</small></div></article>
+        <article class="kpi purple"><img src="assets/images/review-icon.png"><div><span>Review Score</span><strong>7.04/10</strong><small class="up">▲ 0.07% VS PY</small></div></article>
+        <article class="kpi purple"><img src="assets/images/complaint-icon.png"><div><span>Complaint Rating</span><strong>31.57%</strong><small class="down-good">▼ 3.24% VS PY</small></div></article>
+        <article class="kpi purple"><img src="assets/images/staff-icon.png"><div><span>Staff Rating</span><strong>4.04/5</strong><small class="down-bad">▼ 0.03% VS PY</small></div></article>
+        <article class="kpi purple"><img src="assets/images/repeat-icon.png"><div><span>Repeat Customers</span><strong>1.93K</strong><small class="up">▲ 102.85% VS PY</small></div></article>
+      </div>
+      <div class="grid guest-mid">
+        <article class="panel"><h2>Top 7 Managers By Customer Rating</h2><div class="manager-chart"><b style="--h:70%">4.19<span>Yuki Thom...</span></b><b style="--h:83%">4.17<span>Yuki Jones</span></b><b style="--h:76%">4.19<span>Sarah Ander...</span></b><b style="--h:69%">4.14<span>Joseph Silva</span></b><b style="--h:82%">4.15<span>Jessica Martin</span></b><b style="--h:68%">4.14<span>Charles Ander...</span></b><b style="--h:58%">4.14<span>Alex Jones</span></b></div></article>
+        <article class="panel"><h2>Complaints by Category</h2><div class="donut-wrap"><div class="donut donut-purple"></div><div class="legend compact"><span>Billing Query 15.1%</span><span>Slow Check-in 17.5%</span><span>Service Delay 17.5%</span><span>Cleanliness 16.8%</span><span>Noise 16.7%</span><span>AC/Heating 16.4%</span></div></div></article>
+        <article class="panel"><h2>Top 7 Hotel By Score</h2><div class="bar-list purple-bars"><div><span>Azure Crest L...</span><b style="--w:100%">7.31</b></div><div><span>Meridian Cres...</span><b style="--w:98%">7.29</b></div><div><span>Vanguard Suit...</span><b style="--w:96%">7.18</b></div><div><span>Solace Resorts...</span><b style="--w:94%">7.10</b></div><div><span>Vanguard Suit...</span><b style="--w:93%">7.09</b></div><div><span>Solace Resorts...</span><b style="--w:91%">7.06</b></div><div><span>Meridian Cres...</span><b style="--w:89%">7.01</b></div></div></article>
+      </div>
+      <div class="grid guest-bottom">
+        <article class="panel"><h2>Customer Rating VS PY</h2><svg class="chart" viewBox="0 0 680 250" preserveAspectRatio="none"><path class="gridline" d="M45 55H650M45 130H650M45 205H650"/><polyline points="55,70 110,118 165,103 220,92 275,91 330,97 385,170 440,62 495,95 550,82 605,100 645,82" fill="none" stroke="#7351b0" stroke-width="4"/><polyline points="55,52 110,101 165,94 220,101 275,120 330,116 385,192 440,70 495,62 550,104 605,89 645,78" fill="none" stroke="#b6a1e0" stroke-width="4"/></svg></article>
+        <article class="panel"><h2>Review Score VS PY Review</h2><svg class="chart" viewBox="0 0 680 250" preserveAspectRatio="none"><path class="gridline" d="M45 55H650M45 130H650M45 205H650"/><polyline points="55,170 110,89 165,175 220,130 275,145 330,125 385,65 440,135 495,167 550,115 605,140 645,104" fill="none" stroke="#d34f9b" stroke-width="4"/><polyline points="55,195 110,95 165,175 220,142 275,151 330,131 385,52 440,139 495,181 550,95 605,101 645,110" fill="none" stroke="#ef9ccb" stroke-width="4"/></svg></article>
+      </div>
+    </section>
+
+    <footer class="dashboard-footer">
+      <span>Interactive web recreation • Tap visuals for details.</span>
+      <a href="https://nithishibops.github.io/nithishibops-nithish-portfolio/" target="_blank" rel="noopener">Portfolio</a>
+    </footer>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
